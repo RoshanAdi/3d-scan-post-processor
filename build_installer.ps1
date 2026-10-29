@@ -1,4 +1,4 @@
-# Builds dist\installer\3DScanPostProcessor_Setup_<version>.exe
+# Builds dist\installer\3DScanPostProcessor_Setup.exe
 #   1. PyInstaller -> dist\3DScanPostProcessor\ (GUI + CLI exe)
 #   2. optional code signing of the exes (set $env:SIGN_CERT_THUMBPRINT)
 #   3. Inno Setup -> installer exe (signed too when a certificate is given)

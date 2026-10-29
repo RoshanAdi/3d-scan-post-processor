@@ -8,10 +8,14 @@ It removes scan noise, cuts off the scanning base, closes the bottom with a flat
 fills holes, downsamples the mesh and writes a closed solid STL. A desktop GUI and a
 command-line tool are included.
 
-## Windows installer (no Python needed)
+### [⬇ Download the Windows installer (3DScanPostProcessor_Setup.exe)](https://github.com/RoshanAdi/3d-scan-post-processor/releases/latest/download/3DScanPostProcessor_Setup.exe)
 
-1. Download `3DScanPostProcessor_Setup_<version>.exe` from the
-   [Releases](../../releases) page.
+About 140 MB, 64-bit Windows 10/11, no Python needed. Older versions and release notes
+are on the [Releases](https://github.com/RoshanAdi/3d-scan-post-processor/releases) page.
+
+## Windows installer
+
+1. Download `3DScanPostProcessor_Setup.exe` with the link above.
 2. Run it and follow the wizard. You can install for all users (needs admin rights) or
    just for yourself. It adds a Start menu entry, an optional desktop shortcut and an
    uninstaller (Settings > Apps).
@@ -125,7 +129,7 @@ powershell -ExecutionPolicy Bypass -File build_installer.ps1
 This builds `dist\3DScanPostProcessor\` with PyInstaller. The folder holds
 `3DScanPostProcessor.exe` (the GUI) and `3DScanPostProcessorCLI.exe` (the command line; the GUI also
 uses it). Inno Setup then packs that folder into
-`dist\installer\3DScanPostProcessor_Setup_<version>.exe`.
+`dist\installer\3DScanPostProcessor_Setup.exe`.
 
 The exes are not code-signed. Windows SmartScreen will show "Unknown publisher". On PCs
 where **Smart App Control** is on, Windows blocks unsigned apps completely. To sign the
@@ -136,5 +140,5 @@ To publish a release, bump `AppVersion` in `installer\3DScanPostProcessor.iss`, 
 and attach the installer to a GitHub release:
 
 ```
-gh release create v1.0.0 dist\installer\3DScanPostProcessor_Setup_1.0.0.exe --title "3D Scan Post-Processor 1.0.0"
+gh release create v1.0.0 dist\installer\3DScanPostProcessor_Setup.exe --title "3D Scan Post-Processor 1.0.0"
 ```
